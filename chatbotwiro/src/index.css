@@ -1,0 +1,16 @@
+body{
+  margin-top:0px;
+  margin-bottom:0px;
+  background: linear-gradient( to right, rgb(92, 139, 119) , rgb(166, 204, 104) );;
+  color: black;
+}
+
+body.dark {
+  background: linear-gradient(
+    to right,
+    #0f2027,
+    #203a43,
+    #2c5364
+  );
+  color: white;
+}

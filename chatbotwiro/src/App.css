@@ -1,0 +1,55 @@
+.wiro-image {
+  border: 2px solid #e6e6e6;
+  width: 70px;
+  border-radius: 400px;
+  margin-right: 10px;
+  transform: rotate(-10deg);
+  background-color: rgb(180, 180, 115);
+}
+.wiro-image:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.user-image {
+  border: 2px solid #e6e6e6;
+  width: 70px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: rgb(173, 216, 230);
+}
+.user-image:hover {
+  transform: scale(1.1);
+}
+
+.app-container {
+  color: black;
+  height: 100vh;
+  max-width: 600px;
+  margin: auto auto;
+
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.darkModeButton{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.darkModeButton:hover{
+  background-color: #555;
+  transform: scale(1.05);
+}

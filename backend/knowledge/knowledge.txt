@@ -1,0 +1,10 @@
+This chatbot belongs to the UIA university project.
+
+Features:
+- flip coin
+- roll dice
+- show time
+- answer general questions
+
+Developers:
+Phuc Nguyen
