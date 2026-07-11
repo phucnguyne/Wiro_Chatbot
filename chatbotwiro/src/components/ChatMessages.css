@@ -1,0 +1,17 @@
+.chat-messages-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  margin-top: 3px;
+  background: linear-gradient(to bottom,#66ead4, #167cdb );
+  border-radius: 30px;
+
+}
+
+body.dark .chat-messages-container {
+  background: linear-gradient(
+    to bottom,
+    #568a8a,
+    #0f2027
+  );
+}
