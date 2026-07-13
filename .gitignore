@@ -24,3 +24,11 @@ dist-ssr
 *.sw?
 
 .env
+
+.claude/
+.gemini/
+.impeccable/
+.agent/
+
+DESIGN.md
+PRODUCT.md

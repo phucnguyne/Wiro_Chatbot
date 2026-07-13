@@ -1,16 +1,141 @@
-body{
-  margin-top:0px;
-  margin-bottom:0px;
-  background: linear-gradient( to right, rgb(92, 139, 119) , rgb(166, 204, 104) );;
-  color: black;
+/* ==========================================================================
+   Wiro Chatbot — Design Tokens & Global Styles
+   Based on DESIGN.md "The Friendly Terminal"
+   ========================================================================== */
+
+:root {
+  /* ── Brand Colors ── */
+  --color-primary: oklch(55% 0.18 245);
+  --color-primary-hover: oklch(45% 0.18 245);
+  --color-primary-subtle: oklch(55% 0.18 245 / 12%);
+  --color-accent: oklch(78% 0.12 175);
+
+  /* ── Surfaces ── */
+  --color-bg: oklch(98% 0.005 245);
+  --color-surface: oklch(100% 0 0);
+  --color-surface-raised: oklch(97% 0.005 245);
+
+  /* ── Text ── */
+  --color-ink: oklch(18% 0.02 245);
+  --color-ink-muted: oklch(40% 0.02 245);
+
+  /* ── Borders ── */
+  --color-border: oklch(90% 0.005 245);
+  --color-border-focus: var(--color-primary);
+
+  /* ── Message Bubbles ── */
+  --color-msg-user-bg: var(--color-primary);
+  --color-msg-user-text: oklch(99% 0 0);
+  --color-msg-bot-bg: var(--color-surface-raised);
+  --color-msg-bot-text: var(--color-ink);
+
+  /* ── Component tokens ── */
+  --color-input-bg: var(--color-surface);
+  --color-toggle-bg: oklch(22% 0.02 245);
+  --color-toggle-text: oklch(95% 0.005 245);
+
+  /* ── Spacing scale ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ── Radii ── */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* ── Typography ── */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-sm: 0.8125rem;   /* 13px */
+  --font-size-base: 0.9375rem; /* 15px */
+  --font-size-md: 1rem;        /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
 }
 
+/* ── Dark Theme ── */
 body.dark {
-  background: linear-gradient(
-    to right,
-    #0f2027,
-    #203a43,
-    #2c5364
-  );
-  color: white;
+  --color-bg: oklch(14% 0.02 245);
+  --color-surface: oklch(18% 0.02 245);
+  --color-surface-raised: oklch(22% 0.02 245);
+
+  --color-ink: oklch(92% 0.005 245);
+  --color-ink-muted: oklch(65% 0.01 245);
+
+  --color-border: oklch(26% 0.02 245);
+
+  --color-msg-user-bg: oklch(48% 0.15 245);
+  --color-msg-user-text: oklch(98% 0 0);
+  --color-msg-bot-bg: oklch(22% 0.02 245);
+  --color-msg-bot-text: oklch(92% 0.005 245);
+
+  --color-input-bg: oklch(20% 0.02 245);
+  --color-toggle-bg: oklch(92% 0.005 245);
+  --color-toggle-text: oklch(14% 0.02 245);
+  --color-primary-subtle: oklch(55% 0.18 245 / 15%);
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  transition:
+    background-color var(--duration-normal) var(--ease-out),
+    color var(--duration-normal) var(--ease-out);
+}
+
+#root {
+  height: 100%;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-muted);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

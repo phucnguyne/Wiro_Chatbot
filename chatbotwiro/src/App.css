@@ -1,55 +1,85 @@
-.wiro-image {
-  border: 2px solid #e6e6e6;
-  width: 70px;
-  border-radius: 400px;
-  margin-right: 10px;
-  transform: rotate(-10deg);
-  background-color: rgb(180, 180, 115);
-}
-.wiro-image:hover {
-  transform: rotate(-10deg) scale(1.1);
-}
-
-.user-image {
-  border: 2px solid #e6e6e6;
-  width: 70px;
-  border-radius: 50%;
-  margin-left: 10px;
-  background-color: rgb(173, 216, 230);
-}
-.user-image:hover {
-  transform: scale(1.1);
-}
+/* ==========================================================================
+   App Layout — Full-height chat-first shell
+   ========================================================================== */
 
 .app-container {
-  color: black;
-  height: 100vh;
-  max-width: 600px;
-  margin: auto auto;
-
   display: flex;
   flex-direction: column;
-  background: transparent;
+  height: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  gap: var(--space-sm);
 }
 
-.darkModeButton{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
+/* ── App Header ── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-xs);
+  flex-shrink: 0;
+}
 
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: none;
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
 
-  background-color: #333;
-  color: white;
+.app-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  object-fit: cover;
+}
+
+.app-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+.app-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-muted);
+  font-weight: 400;
+}
+
+/* ── Dark Mode Toggle ── */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-toggle-bg);
+  color: var(--color-toggle-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
   cursor: pointer;
-
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
 }
 
-.darkModeButton:hover{
-  background-color: #555;
-  transform: scale(1.05);
+.dark-mode-toggle:hover {
+  border-color: var(--color-ink-muted);
+  transform: translateY(-1px);
+}
+
+.dark-mode-toggle:active {
+  transform: translateY(0);
+}
+
+.dark-mode-toggle svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
